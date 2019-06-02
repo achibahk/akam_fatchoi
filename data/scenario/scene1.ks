@@ -1,4 +1,4 @@
-[_tb_system_call storage=system/_scene1.ks]
+[_tb_system_call storage=system/scene1.ks]
 
 [cm  ]
 [playbgm  volume="100"  time="1000"  loop="true"  storage="music.ogg"  ]
