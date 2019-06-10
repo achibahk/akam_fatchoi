@@ -14,4 +14,4 @@
 [preload  storage="./data/bgimage/bg_bad_route.png"  ]
 [preload  storage="./data/fgimage/default/event4.png"  ]
 [preload  storage="./data/bgimage/rouka.jpg"  ]
-[return]
+[return] 
