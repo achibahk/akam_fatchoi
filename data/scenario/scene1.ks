@@ -1,8 +1,9 @@
-[_tb_system_call storage=system/_scene1.ks]
+[_tb_system_call storage=system/scene1.ks]
 
 [cm  ]
 [playbgm  volume="100"  time="1000"  loop="true"  storage="music.ogg"  ]
 [bg  storage="room.jpg"  time="1000"  ]
+[tb_show_message_window  ]
 [tb_start_tyrano_code]
 [chara_new name="akai" storage="chara/1/akai_0.png" jname="赤井秀一"]
 [chara_new name="akai" storage="chara/1/akai_1.png" jname="赤井秀一"]
@@ -288,5 +289,183 @@ BAD END很BAD的喔[p]
 
 By Achiba[p]
 [_tb_end_text]
+
+[s  ]
+[tb_start_text mode=1 ]
+#哈囉
+哈囉大家好又是我冥仔。[p]
+這次跟大家示範一下變數如何影響結局。[p]
+先把變數設定為零君的好感度，而你的選擇影響零君對赤井的好感度。[p]
+接下來有幾個選項，而我會問你四次，而你需要在這四次選擇累積好感，[p]
+四次選擇之後，視乎好感的多少，決定你跑什麼結局。[p]
+有GOOD1, GOOD2, NORMAL, BAD共四個結局。[p]
+[_tb_end_text]
+
+[tb_start_text mode=1 ]
+#哈囉
+這是第一次選擇。[p]
+[_tb_end_text]
+
+[glink  color="black"  storage="scene1.ks"  size="20"  text="給零君看照片(加好感10)"  x="336"  y="209"  width=""  height=""  _clickable_img=""  target="*rei1+10"  ]
+[glink  color="black"  storage="scene1.ks"  size="20"  text="什麼都不做"  x="403"  y="276"  width=""  height=""  _clickable_img=""  target="*r1"  ]
+[s  ]
+[iscript]
+
+[endscript]
+
+*rei1+10
+
+[tb_eval  exp="f.rei+=10"  name="rei"  cmd="+="  op="t"  val="10"  val_2="undefined"  ]
+[jump  storage="scene1.ks"  target="*r1"  ]
+[s  ]
+*rei2+10
+
+[tb_eval  exp="f.rei+=10"  name="rei"  cmd="+="  op="t"  val="10"  val_2="undefined"  ]
+[jump  storage="scene1.ks"  target="*r2"  ]
+[s  ]
+*rei3+10
+
+[tb_eval  exp="f.rei+=10"  name="rei"  cmd="+="  op="t"  val="10"  val_2="undefined"  ]
+[jump  storage="scene1.ks"  target="*r3"  ]
+[s  ]
+*rei4+10
+
+[tb_eval  exp="f.rei+=10"  name="rei"  cmd="+="  op="t"  val="10"  val_2="undefined"  ]
+[jump  storage="scene1.ks"  target="*ENDING_CHECK"  ]
+[s  ]
+[iscript]
+
+[endscript]
+
+*r1
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#對話1
+這是共通線對話1[p]
+零君跟赤井說話。[p]
+上個選擇不管看不看照片都連到這裡。[p]
+然後將會傳至選擇2。[p]
+[_tb_end_text]
+
+[jump  storage="scene1.ks"  target="*s2"  ]
+[s  ]
+*r2
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#對話2
+這是共通線對話2[p]
+零君跟赤井說話。[p]
+上個選擇不管哪個都連到這裡。[p]
+然後將會傳至選擇3。[p]
+[_tb_end_text]
+
+[jump  storage="scene1.ks"  target="*s3"  ]
+[s  ]
+*r3
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#對話3
+這是共通線對話3[p]
+零君跟赤井說話。[p]
+上個選擇不管哪個都連到這裡。[p]
+然後將會傳至選擇4。[p]
+[_tb_end_text]
+
+[jump  storage="scene1.ks"  target="*s4"  ]
+[s  ]
+*r4
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#對話4
+這是共通線對話4[p]
+零君跟赤井說話。[p]
+上個選擇不管哪個都連到這裡。[p]
+然後將會傳至ENDING。[p]
+[_tb_end_text]
+
+[jump  storage="scene1.ks"  target="*ENDING_CHECK"  ]
+[s  ]
+[iscript]
+
+[endscript]
+
+*s2
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+#哈囉
+這是第二次選擇。[p]
+[_tb_end_text]
+
+[glink  color="black"  storage="scene1.ks"  size="20"  text="給零君芹菜(加好感10)"  x="345"  y="212"  width=""  height=""  _clickable_img=""  target="*rei2+10"  ]
+[glink  color="black"  storage="scene1.ks"  size="20"  text="什麼都不做"  x="403"  y="275"  width=""  height=""  _clickable_img=""  target="*r2"  ]
+[s  ]
+[tb_show_message_window  ]
+*s3
+
+[tb_start_text mode=1 ]
+#哈囉
+這是第三次選擇。[p]
+[_tb_end_text]
+
+[glink  color="black"  storage="scene1.ks"  size="20"  text="向零君背誦日本憲法(加好感10)"  x="304"  y="209"  width=""  height=""  _clickable_img=""  target="*rei3+10"  ]
+[glink  color="black"  storage="scene1.ks"  size="20"  text="什麼都不做"  x="402"  y="274"  width=""  height=""  _clickable_img=""  target="*r3"  ]
+[s  ]
+[tb_show_message_window  ]
+*s4
+
+[tb_start_text mode=1 ]
+#哈囉
+這是最後一次選擇。[p]
+[_tb_end_text]
+
+[glink  color="black"  storage="scene1.ks"  size="20"  text="向零君承諾戒菸(加好感10)"  x="328"  y="211"  width=""  height=""  _clickable_img=""  target="*rei4+10"  ]
+[glink  color="black"  storage="scene1.ks"  size="20"  text="什麼都不做"  x="402"  y="275"  width=""  height=""  _clickable_img=""  target="*r4"  ]
+[s  ]
+*ENDING_CHECK
+
+[tb_show_message_window  ]
+[tb_start_text mode=1 ]
+ENDING CHECK[p]
+[_tb_end_text]
+
+[jump  storage="scene1.ks"  target="*GOOD_END1"  cond="f.rei>40"  ]
+[jump  storage="scene1.ks"  target="*GOOD_END2"  cond="f.rei==30"  ]
+[jump  storage="scene1.ks"  target="*NORMAL1"  cond="f.rei==20"  ]
+[jump  storage="scene1.ks"  target="*BAD1"  cond="f.rei==10"  ]
+[s  ]
+*GOOD_END1
+
+[tb_start_text mode=1 ]
+GOODEND1.[p]
+[_tb_end_text]
+
+[s  ]
+*GOOD_END2
+
+[tb_start_text mode=1 ]
+GOODEND2.[p]
+[_tb_end_text]
+
+[s  ]
+*NORMAL1
+
+[tb_start_text mode=1 ]
+NORMAL1.[p]
+[_tb_end_text]
+
+[s  ]
+*BAD1
+
+[tb_start_text mode=1 ]
+BAD1.[p]
+[_tb_end_text]
+
+[s  ]
+*undefined
 
 [s  ]

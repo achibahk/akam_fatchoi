@@ -8,4 +8,5 @@
 
 ;=========変数宣言部分 
 [iscript] 
+f['rei']=10; 
 [endscript] 
